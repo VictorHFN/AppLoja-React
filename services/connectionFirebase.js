@@ -1,17 +1,14 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/database';
 
-let firebaseConfig = {
-    apiKey: "AIzaSyDHdET0fiPhV8i4kAbgdRAcGykvUsuN1YM",
-    authDomain: "dbcinelist.firebaseapp.com",
-    projectId: "dbcinelist",
-    storageBucket: "dbcinelist.appspot.com",
-    messagingSenderId: "856508044075",
-    appId: "1:856508044075:web:f96c9d822f3aeed8c0eb6e"
+import { initializeApp } from "firebase/app";
 
+const firebaseConfig = {
+    apiKey: "AIzaSyBZByYQUqjbIPCXYIJHk7TjICCM-h6ehYQ",
+    authDomain: "applojavh.firebaseapp.com",
+    projectId: "applojavh",
+    storageBucket: "applojavh.appspot.com",
+    messagingSenderId: "645254952444",
+    appId: "1:645254952444:web:26c2cdf1ca945d8d9b6e79"
 };
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
+
+const app = initializeApp(firebaseConfig);
