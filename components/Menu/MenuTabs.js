@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import GerenciarProdutos from '../Produtos/gerenciarprodutos';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 //import LinearGradient from 'react-native-linear-gradient'; 
