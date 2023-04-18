@@ -63,7 +63,7 @@ export default function Login({ changeStatus }) {
                 <Button
                     onPress={() => this.props.navigation.navigate('TelaPrincipal')}
                     title="Entrar"
-                    color="#B8860B"
+                    color="#1f2e2e"
                 />
 
             </SafeAreaView>
@@ -90,24 +90,14 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#94b8b8',
         padding: 8,
-    },
-    handleLogin: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 45,
-        marginTop: 30,
-    },
-    loginText: {
-        color: '#FFF',
-        fontSize: 24,
     },
 
     input: {
         marginBottom: 20,
-        marginLeft: 40,
-        backgroundColor: '#1E90FF',
+        marginLeft: 30,
+        backgroundColor: '#fff',
         borderRadius: 4,
         height: 45,
         width: 320,
@@ -115,8 +105,23 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#141414'
     },
+    handleLogin: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 45,
+        marginTop: 30,
+    },
+
+    loginText: {
+        color: '#FFF',
+        fontSize: 24,
+    },
+
+
 
     logo: {
+        marginLeft: 16,
+        marginBottom: 10,
         width: 350,
         height: 350,
     },
