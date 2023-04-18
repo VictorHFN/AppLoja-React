@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#94b8b8',
+        backgroundColor: '#1E90FF',
         padding: 8,
     },
 
