@@ -60,12 +60,6 @@ export default function Login({ changeStatus }) {
                     right={<TextInput.Icon icon="eye" />}
                 /> <hr />
 
-                <Button
-                    onPress={() => this.props.navigation.navigate('TelaPrincipal')}
-                    title="Entrar"
-                    color="#1f2e2e"
-                />
-
             </SafeAreaView>
 
 
@@ -90,7 +84,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#94b8b8',
+        backgroundColor: '#1E90FF',
         padding: 8,
     },
 

@@ -1,8 +1,11 @@
+//biblioteca do firebase
+import firebase from 'firebase/compat/app';
+//autenticação de email e senha
+import 'firebase/compat/auth';
+//trabalha com o banco de dados criado no firebase
+import 'firebase/compat/database';
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
-const firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyBZByYQUqjbIPCXYIJHk7TjICCM-h6ehYQ",
     authDomain: "applojavh.firebaseapp.com",
     projectId: "applojavh",
@@ -11,6 +14,9 @@ const firebaseConfig = {
     appId: "1:645254952444:web:26c2cdf1ca945d8d9b6e79"
 };
 
+if (!firebase.apps.length) {
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+}
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export default firebase;
