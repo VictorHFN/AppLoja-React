@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-//import LinearGradient from 'react-native-linear-gradient'; 
-
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 function HomeScreen() {
     return (
@@ -14,6 +11,7 @@ function HomeScreen() {
         </View>
     );
 }
+
 function ListScreen() {
     return (
         <View style={styles.container}>
@@ -21,9 +19,11 @@ function ListScreen() {
         </View>
     );
 }
+
 function PostScreen() {
-    return <GerenciarProdutos />
+    return <Produtos />
 }
+
 function NotificationsScreen() {
     return (
         <View style={styles.container}>
@@ -31,48 +31,51 @@ function NotificationsScreen() {
         </View>
     );
 }
+
 const Tab = createBottomTabNavigator();
 
-export default function MenuTabs() {
+export default function App() {
     return (
         <NavigationContainer>
             <Tab.Navigator
-                initialRouteName="Home"
-                screenOptions={{
-                    tabBarActiveTintColor: '#e91e63',
+                screenOptions={({ route }) => ({
+                    tabBarIcon: ({ color, size }) => {
+                        let iconName;
+
+                        switch (route.name) {
+                            case 'Home':
+                                iconName = 'home';
+                                break;
+                            case 'Listar':
+                                iconName = 'list';
+                                break;
+                            case 'Bicicletas':
+                                iconName = 'biking';
+                                break;
+                            case 'Ler API':
+                                iconName = 'bell';
+                                break;
+                            default:
+                                iconName = 'add-circle-outline';
+                                break;
+                        }
+
+                        return <Icon name={iconName} size={size} color={color} />;
+                    },
+                })}
+                tabBarOptions={{
+                    activeTintColor: '#4682B4',
+                    inactiveTintColor: '#777',
+                    showLabel: true,
                 }}
             >
+                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Listar" component={ListScreen} />
                 <Tab.Screen
-                    name="Home"
-                    component={HomeScreen}
-                    options={{
-                        tabBarLabel: 'Home',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="List"
-                    component={ListScreen}
-                    options={{
-                        tabBarLabel: 'Listar Produtos',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="list" color={color} size={size} />
-                        ),
-                        tabBarBadge: 3,
-                    }}
-                />
-                <Tab.Screen
-                    name="Produtos"
+                    name="Bicicletas"
                     component={PostScreen}
-                    options={{
-                        tabBarLabel: 'Produtos',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="save" color={color} size={size} />
-                        ),
-                    }}
                 />
+                <Tab.Screen name="Ler API" component={NotificationsScreen} />
             </Tab.Navigator>
         </NavigationContainer>
     );
@@ -84,7 +87,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-
     iconTabRound: {
         width: 60,
         height: 90,
@@ -99,4 +101,4 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 5,
     }
-}); 
+});
