@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Login from './components/Login/login'
+import Login from './components/Login/Login'
 import Menu from './components/Menu/MenuTabs';
 
 
