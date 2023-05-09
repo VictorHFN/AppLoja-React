@@ -49,8 +49,8 @@ export default function App() {
                             case 'Listar':
                                 iconName = 'list';
                                 break;
-                            case 'Bicicletas':
-                                iconName = 'biking';
+                            case 'Hamburger':
+                                iconName = 'hamburger';
                                 break;
                             case 'Ler API':
                                 iconName = 'bell';
@@ -72,7 +72,7 @@ export default function App() {
                 <Tab.Screen name="Home" component={HomeScreen} />
                 <Tab.Screen name="Listar" component={ListScreen} />
                 <Tab.Screen
-                    name="Bicicletas"
+                    name="Hamburger"
                     component={PostScreen}
                 />
                 <Tab.Screen name="Ler API" component={NotificationsScreen} />
