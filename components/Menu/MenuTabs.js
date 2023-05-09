@@ -50,7 +50,7 @@ export default function App() {
                                 iconName = 'list';
                                 break;
                             case 'Bicicletas':
-                                iconName = 'biking';
+                                iconName = 'far fa-burger-soda';
                                 break;
                             case 'Ler API':
                                 iconName = 'bell';
