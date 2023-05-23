@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     button: {
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: '#3ea6f2',
+        backgroundColor: '#1E90FF',
         borderWidth: 0.5,
         borderColor: '#fff',
         height: 40,
