@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
 
-    View, Text, StyleSheet,
+    View, Text, StyleSheet, Button,
     TouchableOpacity, Keyboard, FlatList, ActivityIndicator
 } from 'react-native';
 
@@ -51,7 +51,14 @@ export default function gerenciamentoprodutos() {
                 onChangeText={(text) => setCor(text)}
                 value={cor}
             />
-
+            <View style={styles.button}>
+                <Button
+                    onPress={''}
+                    title="Adicionar"
+                    color="#1E90FF"
+                    accessibilityLabel=""
+                />
+            </View>
         </View>
 
     );
@@ -79,7 +86,7 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'center',
         backgroundColor: '#3ea6f2',
         borderWidth: 0.5,

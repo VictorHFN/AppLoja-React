@@ -51,7 +51,7 @@ export default function App() {
                             case 'Listar':
                                 iconName = 'list';
                                 break;
-                            case 'Hamburger':
+                            case 'Lanches':
                                 iconName = 'hamburger';
                                 break;
                             case 'Ler API':
@@ -73,11 +73,7 @@ export default function App() {
             >
                 <Tab.Screen name="Home" component={HomeScreen} />
                 <Tab.Screen name="Listar" component={ListScreen} />
-                <Tab.Screen name="Hamburger" component={ProdutoScreen} />
-                <Tab.Screen
-                    name="Hamburger"
-                    component={PostScreen}
-                />
+                <Tab.Screen name="Lanches" component={ProdutoScreen} />
                 <Tab.Screen name="Ler API" component={NotificationsScreen} />
             </Tab.Navigator>
         </NavigationContainer>
