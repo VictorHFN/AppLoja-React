@@ -3,6 +3,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import Gerenciamentoprodutos from '../produtos/gerenciarproduto';
 
 function HomeScreen() {
     return (
@@ -20,9 +21,10 @@ function ListScreen() {
     );
 }
 
-function PostScreen() {
-    return <Produtos />
+function ProdutoScreen() {
+    return <Gerenciamentoprodutos />
 }
+
 
 function NotificationsScreen() {
     return (
@@ -71,6 +73,7 @@ export default function App() {
             >
                 <Tab.Screen name="Home" component={HomeScreen} />
                 <Tab.Screen name="Listar" component={ListScreen} />
+                <Tab.Screen name="Hamburger" component={ProdutoScreen} />
                 <Tab.Screen
                     name="Hamburger"
                     component={PostScreen}
