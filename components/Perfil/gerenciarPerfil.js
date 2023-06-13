@@ -18,7 +18,7 @@ const Separator = () => {
 
 */
 
-export default function GerenciarPerfil() {
+export default function Perfil() {
 
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
@@ -26,6 +26,7 @@ export default function GerenciarPerfil() {
     const [cpf, setCpf] = useState('');
     const [genero, setGenero] = useState('');
     const [key, setKey] = useState('');
+    const inputRef = useRef(null);
 
     //implementação dos métodos update ou insert 
 
@@ -104,9 +105,9 @@ export default function GerenciarPerfil() {
                 left={<TextInput.Icon icon="account" />}
                 maxLength={40}
                 style={styles.input}
-                onChangeText={(texto) => setEtnia(texto)}
+                onChangeText={(texto) => setNome(texto)}
                 value={nome}
-                ref={inputRef} 
+                ref={inputRef}
 
             />
 
@@ -116,9 +117,9 @@ export default function GerenciarPerfil() {
                 left={<TextInput.Icon icon="account-edit" />}
                 maxLength={40}
                 style={styles.input}
-                onChangeText={(texto) => setNome(texto)}
-                value={nome}
-                ref={inputRef} 
+                onChangeText={(texto) => setTelefone(texto)}
+                value={telefone}
+                ref={inputRef}
 
             />
 
@@ -128,9 +129,9 @@ export default function GerenciarPerfil() {
                 left={<TextInput.Icon icon="calendar-range" />}
                 maxLength={40}
                 style={styles.input}
-                onChangeText={(texto) => setDataNasc(texto)}
-                value={dataNasc}
-                ref={inputRef} 
+                onChangeText={(texto) => setEndereco(texto)}
+                value={endereco}
+                ref={inputRef}
 
             />
 
@@ -140,9 +141,9 @@ export default function GerenciarPerfil() {
                 left={<TextInput.Icon icon="phone" />}
                 maxLength={40}
                 style={styles.input}
-                onChangeText={(texto) => setTelefone(texto)}
-                value={telefone}
-                ref={inputRef} 
+                onChangeText={(texto) => setCpf(texto)}
+                value={cpf}
+                ref={inputRef}
 
             />
 
@@ -152,9 +153,9 @@ export default function GerenciarPerfil() {
                 left={<TextInput.Icon icon="home-edit" />}
                 maxLength={40}
                 style={styles.input}
-                onChangeText={(texto) => setEndereco(texto)}
-                value={endereco}
-                ref={inputRef} 
+                onChangeText={(texto) => setGenero(texto)}
+                value={genero}
+                ref={inputRef}
 
             />
 
@@ -162,8 +163,8 @@ export default function GerenciarPerfil() {
 
                 <Button
                     onPress={insertUpdate}
-                    title="Salvar"
-                    color="#DC143C"
+                    title="Adicionar"
+                    color="#1E90FF"
                     accessibilityLabel=""
                 />
             </View>
@@ -200,9 +201,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        backgroundColor: '#DC143C',
+        backgroundColor: '#1E90FF',
         borderWidth: 0.5,
-        borderColor: '#DC143C',
+        borderColor: '#1E90FF',
         height: 40,
         borderRadius: 5,
         margin: 5,

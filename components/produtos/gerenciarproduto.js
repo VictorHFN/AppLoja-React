@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import firebase from '../../services/connectionFirebase';
 import { TextInput } from 'react-native-paper';
+import Listagem from './listagem'
 
 export default function gerenciamentoprodutos() {
 
@@ -15,7 +16,7 @@ export default function gerenciamentoprodutos() {
     const [cor, setCor] = useState('');
     const [key, setKey] = useState('');
 
-    onst[cars, setCars] = useState([]);
+    const [produtos, setProdutos] = useState([]);
     const [loading, setLoading] = useState(true);
     const inputRef = useRef(null);
 
@@ -23,7 +24,7 @@ export default function gerenciamentoprodutos() {
 
         async function search() {
             await firebase.database().ref('cars').on('value', (snapshot) => {
-                setCars([]);
+                setProdutos([]);
                 snapshot.forEach((chilItem) => {
 
                     let data = {
@@ -35,7 +36,7 @@ export default function gerenciamentoprodutos() {
                         price: chilItem.val().price,
                         color: chilItem.val().color,
                     };
-                    setCars(oldArray => [...oldArray, data].reverse());
+                    setProdutos(oldArray => [...oldArray, data].reverse());
                 })
                 setLoading(false);
             })
@@ -109,10 +110,10 @@ export default function gerenciamentoprodutos() {
     function handleEdit(data) {
 
         setKey(data.key),
-            setName(data.nome),
-            setBrand(data.marca),
-            setPrice(data.preco),
-            setColor(data.cor)
+            setNome(data.nome),
+            setMarca(data.marca),
+            setPreco(data.preco),
+            setCor(data.cor)
     }
 
     return (
