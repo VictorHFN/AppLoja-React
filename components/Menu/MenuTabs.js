@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Gerenciamentoprodutos from '../produtos/gerenciarproduto';
+import Perfil from '../Perfil/gerenciarPerfil';
+
 
 function HomeScreen() {
     return (
@@ -14,11 +16,7 @@ function HomeScreen() {
 }
 
 function ListScreen() {
-    return (
-        <View style={styles.container}>
-            <Text></Text>
-        </View>
-    );
+    return <Perfil />
 }
 
 function ProdutoScreen() {

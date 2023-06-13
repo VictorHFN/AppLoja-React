@@ -8,6 +8,7 @@ import 'firebase/compat/database';
 let firebaseConfig = {
     apiKey: "AIzaSyBZByYQUqjbIPCXYIJHk7TjICCM-h6ehYQ",
     authDomain: "applojavh.firebaseapp.com",
+    databaseURL: "https://applojavh-default-rtdb.firebaseio.com",
     projectId: "applojavh",
     storageBucket: "applojavh.appspot.com",
     messagingSenderId: "645254952444",
