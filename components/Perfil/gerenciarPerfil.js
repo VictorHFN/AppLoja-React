@@ -106,6 +106,7 @@ export default function GerenciarPerfil() {
                 style={styles.input}
                 onChangeText={(texto) => setEtnia(texto)}
                 value={nome}
+                ref={inputRef} 
 
             />
 
@@ -117,6 +118,7 @@ export default function GerenciarPerfil() {
                 style={styles.input}
                 onChangeText={(texto) => setNome(texto)}
                 value={nome}
+                ref={inputRef} 
 
             />
 
@@ -128,6 +130,7 @@ export default function GerenciarPerfil() {
                 style={styles.input}
                 onChangeText={(texto) => setDataNasc(texto)}
                 value={dataNasc}
+                ref={inputRef} 
 
             />
 
@@ -139,6 +142,7 @@ export default function GerenciarPerfil() {
                 style={styles.input}
                 onChangeText={(texto) => setTelefone(texto)}
                 value={telefone}
+                ref={inputRef} 
 
             />
 
@@ -150,6 +154,7 @@ export default function GerenciarPerfil() {
                 style={styles.input}
                 onChangeText={(texto) => setEndereco(texto)}
                 value={endereco}
+                ref={inputRef} 
 
             />
 

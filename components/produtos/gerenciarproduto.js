@@ -126,6 +126,7 @@ export default function gerenciamentoprodutos() {
                 style={styles.input}
                 onChangeText={(text) => setNome(text)}
                 value={nome}
+                ref={inputRef}
             />
 
             <TextInput
@@ -134,6 +135,7 @@ export default function gerenciamentoprodutos() {
                 style={styles.input}
                 onChangeText={(text) => setMarca(text)}
                 value={marca}
+                ref={inputRef}
             />
 
             <TextInput
@@ -142,6 +144,7 @@ export default function gerenciamentoprodutos() {
                 style={styles.input}
                 onChangeText={(text) => setPreco(text)}
                 value={preco}
+                ref={inputRef}
             />
 
             <TextInput
@@ -150,6 +153,7 @@ export default function gerenciamentoprodutos() {
                 style={styles.input}
                 onChangeText={(text) => setCor(text)}
                 value={cor}
+                ref={inputRef}
             />
             <View style={styles.button}>
                 <Button
