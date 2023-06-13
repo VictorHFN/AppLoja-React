@@ -15,6 +15,34 @@ export default function gerenciamentoprodutos() {
     const [cor, setCor] = useState('');
     const [key, setKey] = useState('');
 
+    onst[cars, setCars] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+
+        async function search() {
+            await firebase.database().ref('cars').on('value', (snapshot) => {
+                setCars([]);
+                snapshot.forEach((chilItem) => {
+
+                    let data = {
+                        //de acordo com a chave de cada item busca os valores 
+                        //cadastrados na relação e atribui nos dados 
+                        key: chilItem.key,
+                        name: chilItem.val().name,
+                        brand: chilItem.val().brand,
+                        price: chilItem.val().price,
+                        color: chilItem.val().color,
+                    };
+                    setCars(oldArray => [...oldArray, data].reverse());
+                })
+                setLoading(false);
+            })
+        }
+        search();
+    }, []);
+
     //implementação dos métodos update ou insert 
     async function insertUpdate() {
         //editar dados 
@@ -57,6 +85,34 @@ export default function gerenciamentoprodutos() {
         setMarca('');
         setPreco('');
         setCor('');
+    }
+    //função para excluir um item  
+
+    function handleDelete(key) {
+
+
+        firebase.database().ref('produtos').child(key).remove()
+            .then(() => {
+                //todos os itens que forem diferentes daquele que foi deletado 
+                //serão atribuidos no array 
+                const findProdutos = produtos.filter(item => item.key !== key)
+                setProdutos(findProdutos)
+
+            })
+
+    }
+
+
+
+    //função para editar  
+
+    function handleEdit(data) {
+
+        setKey(data.key),
+            setName(data.nome),
+            setBrand(data.marca),
+            setPrice(data.preco),
+            setColor(data.cor)
     }
 
     return (
@@ -103,7 +159,28 @@ export default function gerenciamentoprodutos() {
                     accessibilityLabel=""
                 />
             </View>
+            <View>
+                <Text style={styles.listar}>Listagem de Produtos</Text>
+            </View>
+            {loading ?
+                (
+                    <ActivityIndicator color="#121212" size={45} />
+                ) :
+                (
+                    <FlatList
+
+                        keyExtractor={item => item.key}
+                        data={produtos}
+                        renderItem={({ item }) => (
+                            <Listagem data={item} deleteItem={handleDelete}
+                                editItem={handleEdit} />
+                        )}
+                    />
+                )
+            }
         </View>
+
+
 
     );
 
