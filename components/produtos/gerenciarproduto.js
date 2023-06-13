@@ -23,7 +23,7 @@ export default function gerenciamentoprodutos() {
     useEffect(() => {
 
         async function search() {
-            await firebase.database().ref('cars').on('value', (snapshot) => {
+            await firebase.database().ref('Produtos').on('value', (snapshot) => {
                 setProdutos([]);
                 snapshot.forEach((chilItem) => {
 
