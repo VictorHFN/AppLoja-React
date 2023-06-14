@@ -35,22 +35,24 @@ export default function GerenciarProdutos() {
         .database()
         .ref("produtos")
         .on("value", (snapshot) => {
+          console.log(snapshot);
           setProdutos([]);
           snapshot.forEach((chilItem) => {
             let data = {
               //de acordo com a chave de cada item busca os valores
               //cadastrados na relação e atribui nos dados
               key: chilItem.key,
-              name: chilItem.val().nome,
-              brand: chilItem.val().marca,
-              price: chilItem.val().preco,
-              color: chilItem.val().cor,
+              nome: chilItem.val().nome,
+              marca: chilItem.val().marca,
+              preco: chilItem.val().preco,
+              cor: chilItem.val().cor,
             };
             setProdutos((oldArray) => [...oldArray, data].reverse());
           });
           setLoading(false);
         });
     }
+
     search();
   }, []);
 
